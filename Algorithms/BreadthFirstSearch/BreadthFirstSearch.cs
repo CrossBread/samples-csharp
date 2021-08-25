@@ -35,7 +35,7 @@ namespace BreadthFirstSearch
             Console.Out.WriteLine($"Breadth First Searching for {target} from root {root}");
 
             /*
-            Note that the only difference between DFS and BFS is the underlying datastructure.  BFS utilizes a
+            Note that the only difference between DFS and BFS is the underlying data structure.  BFS utilizes a
             FIFO (first in first out) structure called a Queue.  We "Enqueue" to add an item to the end of the queue
             and "De-queue" to remove one from the front.
             */

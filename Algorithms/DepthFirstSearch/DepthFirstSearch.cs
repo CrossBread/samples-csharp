@@ -25,7 +25,7 @@ namespace DepthFirstSearch
             // get a random target value
             var possibleValues = "ABCDEFGHIJKLMN".ToCharArray();
             var target = possibleValues[new Random().Next(possibleValues.Length)];
-            
+
             // Search
             var dfsResult = DepthFirstSearch(root, target);
         }
@@ -33,13 +33,9 @@ namespace DepthFirstSearch
         public static TreeNode<T> DepthFirstSearch<T>(TreeNode<T> root, T target)
         {
             Console.Out.WriteLine($"Depth First Searching for {target} from root {root}");
-            
-            // Note that the only difference between DFS and BFS is the underlying datastructure.  DFS utilizes a
-            // LIFO (last in first out) structure called a Stack.
-            
-            
+
             /*
-            Note that the only difference between DFS and BFS is the underlying datastructure.  DFS utilizes a
+            Note that the only difference between DFS and BFS is the underlying data structure.  DFS utilizes a
             LIFO (last in first out) structure called a Stack.  We "Push" to add an item to the top of the stack
             and "Pop" to remove one from the top.
             */
@@ -58,17 +54,13 @@ namespace DepthFirstSearch
                     Console.Out.WriteLine("Found!");
                     return node;
                 }
-                
+
                 // Discover Children
-                foreach (var child in node.Children)
-                {
-                    discovered.Push(child);
-                }
+                foreach (var child in node.Children) discovered.Push(child);
             }
 
             // No matches found
             return null;
         }
-        
     }
 }
