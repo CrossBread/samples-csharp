@@ -1,8 +1,8 @@
-﻿﻿using System;
+﻿using System;
 using System.Collections.Generic;
 using Common.Model;
 
-namespace Trees.Search
+namespace BreadthFirstSearch
 {
     public class BreadthFirstSearchExample
     {
@@ -33,13 +33,13 @@ namespace Trees.Search
         public static TreeNode<T> BreadthFirstSearch<T>(TreeNode<T> root, T target)
         {
             Console.Out.WriteLine($"Breadth First Searching for {target} from root {root}");
-            
+
             /*
             Note that the only difference between DFS and BFS is the underlying datastructure.  BFS utilizes a
             FIFO (first in first out) structure called a Queue.  We "Enqueue" to add an item to the end of the queue
             and "De-queue" to remove one from the front.
             */
-            
+
             var discovered = new Queue<TreeNode<T>>();
             discovered.Enqueue(root);
 
@@ -57,10 +57,7 @@ namespace Trees.Search
                 }
 
                 // Discover Children
-                foreach (var child in node.Children)
-                {
-                    discovered.Enqueue(child);
-                }
+                foreach (var child in node.Children) discovered.Enqueue(child);
             }
 
             // No matches found
